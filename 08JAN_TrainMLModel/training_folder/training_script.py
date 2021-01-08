@@ -16,8 +16,8 @@ args = parser.parse_args()
 reg = args.reg_rate
 
 # Prepare the dataset
-diabetes = pd.read_csv('data.csv')
-X, y = data[['Feature1','Feature2','Feature3']].values, data['Label'].values
+diabetes = pd.read_csv('diabetes.csv')
+X, y = diabetes[["Pregnancies","PlasmaGlucose","DiastolicBloodPressure","TricepsThickness","SerumInsulin","BMI","DiabetesPedigree","Age"]].values, diabetes['Diabetic'].values
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.30)
 
 # Train a logistic regression model
